@@ -1,0 +1,22 @@
+[
+  {"latitude":40.63210,"longitude":-74.05700,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T12:43:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63218,"longitude":-74.05691,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T12:48:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63226,"longitude":-74.05682,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T12:53:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63234,"longitude":-74.05673,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T12:58:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63242,"longitude":-74.05664,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:03:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63250,"longitude":-74.05655,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:08:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63258,"longitude":-74.05646,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:13:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63266,"longitude":-74.05637,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:18:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63274,"longitude":-74.05628,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:23:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63282,"longitude":-74.05619,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:28:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63290,"longitude":-74.05610,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:33:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63298,"longitude":-74.05601,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:38:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63306,"longitude":-74.05592,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:43:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63314,"longitude":-74.05583,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:48:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63322,"longitude":-74.05574,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:53:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63330,"longitude":-74.05565,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T13:58:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63338,"longitude":-74.05556,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T14:03:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63346,"longitude":-74.05547,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T14:08:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63354,"longitude":-74.05535,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T14:13:28","wave_height":0.8,"wind_speed":5.0},
+  {"latitude":40.63361,"longitude":-74.05522,"sog":4.0,"cog":45.0,"timestamp":"2026-10-20T14:18:28","wave_height":0.8,"wind_speed":5.0}
+]

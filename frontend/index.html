@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ship Route AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Map library -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <h1>🚢 Ship Route AI</h1>
+            <p>AI-powered vessel tracking and route prediction</p>
+        </div>
+
+        <div id="api-status" class="status">
+            Checking API...
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="panel">
+            <h2>Vessel Tracking</h2>
+            <p>
+                Load an example AIS track and predict the vessel's
+                future route, arrival time, and risk.
+            </p>
+
+            <button id="sample-btn" class="secondary-btn">
+                Load Sample Track
+            </button>
+
+            <div class="input-group">
+                <label for="track-data">
+                    AIS observations (JSON)
+                </label>
+
+                <textarea
+                    id="track-data"
+                    rows="12"
+                    placeholder="Click 'Load Sample Track' to fill example data..."
+                ></textarea>
+            </div>
+
+            <button id="predict-btn" class="primary-btn">
+                Predict Route
+            </button>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="results">
+            <h2>Prediction Results</h2>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <h3>Nearest Port</h3>
+                    <p id="nearest-port">—</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Estimated Arrival</h3>
+                    <p id="eta">—</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Distance to Port</h3>
+                    <p id="distance">—</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Lane Status</h3>
+                    <p id="lane-status">—</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Risk Level</h3>
+                    <p id="risk">—</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Predicted Vessel Route</h2>
+            <p>
+                The map will display the vessel's current position
+                and its predicted future positions.
+            </p>
+
+            <div id="map"></div>
+
+            <p class="map-note">
+                Map tiles require an internet connection.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Ship Route AI · Machine Learning Project</p>
+    </footer>
+
+    <!-- Map library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
