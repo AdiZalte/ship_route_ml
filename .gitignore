@@ -6,7 +6,6 @@ data/raw/*
 data/interim/*
 data/processed/*
 data/external/*
-models/*
 reports/*
 !data/raw/.gitkeep
 !models/.gitkeep
