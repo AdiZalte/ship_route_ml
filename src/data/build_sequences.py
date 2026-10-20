@@ -103,9 +103,9 @@ val_ids = set(vessels[int(n * 0.70):int(n * 0.85)])
 test_ids = set(vessels[int(n * 0.85):])
 
 splits = {
-    "train": ([], []),
-    "val": ([], []),
-    "test": ([], [])
+    "train": ([], [], []),
+    "val": ([], [], []),
+    "test": ([], [], [])
 }
 
 report = {
@@ -158,6 +158,8 @@ def make_windows(segment, name):
         ["latitude", "longitude", "sog", "cog"]
     ].to_numpy(dtype=np.float32)
 
+    timestamps = segment["timestamp"].astype("int64").to_numpy() // 1_000_000_000  # ns -> s
+
     features = np.column_stack([
         values[:, 0],
         values[:, 1],
@@ -173,14 +175,17 @@ def make_windows(segment, name):
         report["discarded_short_segments"] += 1
         return
 
-    xs, ys = splits[name]
+    xs, ys, ts = splits[name]
 
     for start in range(0, len(segment) - total + 1, STRIDE):
         middle = start + INPUT_STEPS
+        if values[start:middle, 2].mean() < 1.0:   # mean SOG under 1 knot
+            continue
         end = middle + OUTPUT_STEPS
 
         xs.append(features[start:middle])
         ys.append(coords[middle:end])
+        ts.append(timestamps[middle - 1])  # epoch seconds of last input step
 
 
 for mmsi, track in df.groupby("mmsi", sort=False):
@@ -242,19 +247,21 @@ def stack_windows(items, shape):
 
 arrays = {}
 
-for name, (xs, ys) in splits.items():
+for name, (xs, ys, ts) in splits.items():
     arrays[f"X_{name}"] = stack_windows(
         xs, (INPUT_STEPS, 5)
     )
     arrays[f"y_{name}"] = stack_windows(
         ys, (OUTPUT_STEPS, 2)
     )
+    arrays[f"T_{name}"] = np.array(ts, dtype=np.int64) if ts else np.empty(0, dtype=np.int64)
 
     report[f"{name}_sequences"] = len(xs)
     print(
         name,
         "X:", arrays[f"X_{name}"].shape,
-        "y:", arrays[f"y_{name}"].shape
+        "y:", arrays[f"y_{name}"].shape,
+        "T:", arrays[f"T_{name}"].shape
     )
 
 if not len(arrays["X_train"]):
