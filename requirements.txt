@@ -10,3 +10,7 @@ pyarrow
 pyyaml
 tqdm
 duckdb
+folium
+requests
+fastapi
+uvicorn
