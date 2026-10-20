@@ -12,3 +12,5 @@ tqdm
 duckdb
 folium
 requests
+fastapi
+uvicorn
